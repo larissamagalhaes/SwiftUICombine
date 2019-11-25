@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  SwiftUICombine
+//  PPPoc
 //
-//  Created by Larissa Magalhães on 2019-10-23.
+//  Created by Larissa Magalhães on 2019-10-30.
 //  Copyright © 2019 Larissa Magalhães. All rights reserved.
 //
 
@@ -10,30 +10,21 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var selectedView = 1
+    init() {
+           UITableView.appearance().tableFooterView = UIView()
+    }
     
     var body: some View {
-        TabView(selection: $selectedView) {
-            HomeView()
-                .tabItem {
-                    Image("home")
-                    Text("Home")
-            }
-            .tag(1)
-            Text("Signal Viewer")
-                .tabItem {
-                    Image("home")
-                    Text("Signal Viewer") }.tag(2)
-            Text("Settings")
-                .tabItem {
-                    Image("home")
-                    Text("Settings") }.tag(3)
-            Text("Me")
-                .tabItem {
-                    Image("home")
-                    Text("Me") }.tag(4)
+        List {
+            ComicRow(comic: Comic(id: 1, title: "Iron Man", body: "Plagued with worry and insomnia since saving New York from destruction, Tony Stark (Robert Downey Jr.), now, is more dependent on the suits that give him his Iron Man persona -- so much so that every aspect of his life is affected, including his relationship with Pepper (Gwyneth Paltrow). After a malevolent enemy known as the Mandarin (Ben Kingsley) reduces his personal world to rubble, Tony must rely solely on instinct and ingenuity to avenge his losses and protect the people he loves.", imageURL: "https://terrigen-cdn-dev.marvel.com/content/prod/1x/ironman3_lob_crd_01_10.jpg"))
+                .frame(height: 100)
+            ComicRow(comic: Comic(id: 1, title: "Iron Man", body: "Plagued with worry and insomnia since saving New York from destruction, Tony Stark (Robert Downey Jr.), now, is more dependent on the suits that give him his Iron Man persona -- so much so that every aspect of his life is affected, including his relationship with Pepper (Gwyneth Paltrow). After a malevolent enemy known as the Mandarin (Ben Kingsley) reduces his personal world to rubble, Tony must rely solely on instinct and ingenuity to avenge his losses and protect the people he loves.", imageURL: "https://terrigen-cdn-dev.marvel.com/content/prod/1x/ironman3_lob_crd_01_10.jpg"))
+            .frame(height: 100)
+
+            ComicRow(comic: Comic(id: 1, title: "Iron Man", body: "Plagued with worry and insomnia since saving New York from destruction, Tony Stark (Robert Downey Jr.), now, is more dependent on the suits that give him his Iron Man persona -- so much so that every aspect of his life is affected, including his relationship with Pepper (Gwyneth Paltrow). After a malevolent enemy known as the Mandarin (Ben Kingsley) reduces his personal world to rubble, Tony must rely solely on instinct and ingenuity to avenge his losses and protect the people he loves.", imageURL: "https://terrigen-cdn-dev.marvel.com/content/prod/1x/ironman3_lob_crd_01_10.jpg"))
+            .frame(height: 100)
+
         }
-        .accentColor(Color(red: 2/255, green: 131/255, blue: 133/255))
     }
 }
 
